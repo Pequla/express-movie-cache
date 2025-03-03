@@ -1,0 +1,86 @@
+{
+    "id": "HO00014952",
+    "HOFilmCode": "A000016169",
+    "corporateFilmId": "A000016169",
+    "posterImage": "https://s3proxygw.cineplexx.at/cms-live/asset/_default_upload_bucket/B1_DEN-OF-THIEVES_2_SRB_712px446_1.jpg",
+    "title": "Bratstvo lopova 2: Panter",
+    "titleCalculated": "Bratstvo lopova 2: Panter",
+    "titleOriginalCalculated": "Den of Thieves: Pantera",
+    "descriptionCalculated": "U ovom nastavku, legendarni Big Nik (Butler) ponovo kreće u lov – ovog puta u opasni svet evropskog podzemlja. Njegova meta? Doni (Jackson), koji se našao usred smrtonosnih intriga u svetu kradljivaca dijamanata i nemilosrdne bande Pink Panter. Njihov cilj: najveća i najdrskija pljačka u istoriji – dijamantska berza svetskog kalibra.\n\nS adrenalinskim poterama, dvostrukim izdajama i nepredvidivim obrtima, Big Nik mora da se suoči ne samo s kriminalcima, već i sa sopstvenim granicama kako bi zaustavio ovu smrtonosnu operaciju. Spremite se za akciju bez prestanka – akciju u kojoj se svaki potez računa, a ulog je život ili smrt!",
+    "descriptionShortCalculated": "Džerard Batler (Plane, 300) i O’Šea Džekson Jr. (Godzilla: King of the Monsters) vraćaju se u eksplozivnom nastavku akcionog hita iz 2018 „Bratstvo lopova“!",
+    "trailers": [
+      {
+        "trailerKey": "1b932e60-d2bc-4fa4-a8ac-873833ca8722",
+        "keyframeUrl": "https://kf-cineplexx.sf.apa.at/cineplexx/20241231_30_909729_den_of_thieves_2_rs.jpg",
+        "videoUrl": "https://vs-dl-cineplexx.sf.apa.at/apavideoservice/cineplexx/20241231_30_909729_den_of_thieves_2_rs_720.mp4",
+        "iosUrl": "https://vs-str-cineplexx.sf.apa.at/vod/_definst_/http/cineplexx/smil:20241231_30_909729_den_of_thieves_2_rs_404.smil/playlist.m3u8",
+        "androidUrl": "https://vs-dl-cineplexx.sf.apa.at/apavideoservice/cineplexx/20241231_30_909729_den_of_thieves_2_rs_720.mp4",
+        "universalPlayerUrl": "https://uvp-cineplexx.sf.apa.at/embed/1b932e60-d2bc-4fa4-a8ac-873833ca8722"
+      }
+    ],
+    "director": "Christian  Gudegast",
+    "directors": [
+      "Christian  Gudegast"
+    ],
+    "actors": [
+      "Gerard Butler",
+      "Salvatore Esposito",
+      "O'Shea Jackson Jr.",
+      "Swen Temmel",
+      "Evin Ahmad",
+      "Meadow Williams"
+    ],
+    "startDate": "2025-01-09",
+    "openingDate": "2025-01-09T00:00:00+01:00",
+    "genres": [
+      "Drama",
+      "Akcija",
+      "Kriminalistički"
+    ],
+    "genreId": "0000000005",
+    "comingSoon": true,
+    "isScheduledAtCinema": true,
+    "rating": "o.A.",
+    "ratingDescription": "",
+    "runTime": 130,
+    "gallery": [
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_02193702_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_00365_R_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_10375_R_CROP_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_01112621_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_08241_R_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_07931_R_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_07998_R_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_02023113_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_07843_R_500px.jpg",
+      "https://s3proxygw.cineplexx.at/cms-live/asset/SRB/movies/Den%20of%20Thieves%202-%20Panthera/DOT2P_02091102_R_500px.jpg"
+    ],
+    "teachingMaterials": [],
+    "cinemaIds": [
+      "1118",
+      "1111",
+      "1114",
+      "1115",
+      "1116",
+      "1119",
+      "1112",
+      "1113"
+    ],
+    "technologies": [],
+    "availableTechCMS": [
+      {
+        "id": "2229",
+        "Description": "<p>2D</p>",
+        "DescriptionEN": "<p>2D</p>"
+      }
+    ],
+    "availableVersCMS": [],
+    "movieCountryCMS": [
+      "USA"
+    ],
+    "keywords": [],
+    "distributorName": "Blitz",
+    "shortURL": "bratstvo-lopova-2-panter",
+    "synopsis": "U ovom nastavku, legendarni Big Nik (Butler) ponovo kreće u lov – ovog puta u opasni svet evropskog podzemlja. Njegova meta? Doni (Jackson), koji se našao usred smrtonosnih intriga u svetu kradljivaca dijamanata i nemilosrdne bande Pink Panter. Njihov cilj: najveća i najdrskija pljačka u istoriji – dijamantska berza svetskog kalibra.\n\nS adrenalinskim poterama, dvostrukim izdajama i nepredvidivim obrtima, Big Nik mora da se suoči ne samo s kriminalcima, već i sa sopstvenim granicama kako bi zaustavio ovu smrtonosnu operaciju. Spremite se za akciju bez prestanka – akciju u kojoj se svaki potez računa, a ulog je život ili smrt!",
+    "shortSynopsis": "Džerard Batler (Plane, 300) i O’Šea Džekson Jr. (Godzilla: King of the Monsters) vraćaju se u eksplozivnom nastavku akcionog hita iz 2018 „Bratstvo lopova“!"
+  }
