@@ -37,7 +37,7 @@ export class ActorService {
         if (data)
             return data
 
-        return await repo.create({
+        return await repo.save({
             name: name,
             createdAt: new Date()
         })

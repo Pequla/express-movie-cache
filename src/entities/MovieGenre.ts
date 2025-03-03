@@ -6,8 +6,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Genre } from "./Genre";
 import { Movie } from "./Movie";
+import { Genre } from "./Genre";
 
 @Index("fk_movie_genre_genre_idx", ["genreId"], {})
 @Index("fk_movie_genre_movie_idx", ["movieId"], {})

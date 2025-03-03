@@ -4,6 +4,8 @@ import { Actor } from "./entities/Actor";
 import { Director } from "./entities/Director";
 import { Genre } from "./entities/Genre";
 import { Movie } from "./entities/Movie";
+import { MovieActor } from "./entities/MovieActor";
+import { MovieGenre } from "./entities/MovieGenre";
 
 // Connecting to database
 dotenv.config();
@@ -15,7 +17,7 @@ export const AppDataSource = new DataSource({
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
     entities: [
-        Actor, Director, Genre, Movie
+        Movie, Actor, Director, Genre, MovieActor, MovieGenre
     ],
     logging: false,
 })

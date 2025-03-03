@@ -1,6 +1,7 @@
 {
   "name": "express-movie-cache",
-  "module": "index.ts",
+  "module": "./src/index.ts",
+  "main": "./src/index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
@@ -8,7 +9,9 @@
     "@types/bun": "latest",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/morgan": "^1.9.9"
+    "@types/morgan": "^1.9.9",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -20,5 +23,9 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.12.0",
     "typeorm": "^0.3.21"
+  },
+  "scripts": {
+    "dev": "bun --watch ./src/index.ts",
+    "build": "tsc"
   }
 }
