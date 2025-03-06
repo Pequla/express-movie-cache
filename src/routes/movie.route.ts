@@ -9,8 +9,10 @@ MovieRoute.get('/', async (req, res) => {
         const search = req.query.search as string
         const actor = Number(req.query.actor)
         const genre = Number(req.query.genre)
-        res.json(await MovieService.getMovies(search, actor, genre))
+        const director = Number(req.query.director)
+        res.json(await MovieService.getMovies(search, actor, genre, director))
     } catch (e) {
+        console.log(e)
         sendErrorResponse(res)
     }
 })

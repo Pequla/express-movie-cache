@@ -10,45 +10,43 @@ import type { Genre } from "../entities/Genre";
 import { GenreService } from "./genre.service";
 import { MovieActor } from "../entities/MovieActor";
 import { MovieGenre } from "../entities/MovieGenre";
+import type { SelectQueryBuilder } from "typeorm";
 
 const repo = AppDataSource.getRepository(Movie)
 const actorRepo = AppDataSource.getRepository(MovieActor)
 const genreRepo = AppDataSource.getRepository(MovieGenre)
 
 export class MovieService {
-    static async getMovies(search: string, actorId?: number, genreId?: number) {
-        return await repo.find({
-            where: {
-                ...(search && {
-                    OR: [
-                        { title: filter(search) },
-                        { description: filter(search) },
-                        { shortUrl: filter(search) }
-                    ]
-                }),
-                ...(actorId && {
-                    movieActors: {
-                        actorId: actorId
-                    }
-                }),
-                ...(genreId && {
-                    movieGenres: {
-                        genreId: genreId
-                    }
-                })
-            },
-            relations: {
-                director: true,
-                movieActors: {
-                    actor: true
-                },
-                movieGenres: {
-                    genre: true
-                }
-            }
-        })
+    static async getMovies(search: string, actorId?: number, genreId?: number, directorId?: number) {
+        let queryBuilder: SelectQueryBuilder<Movie> = repo.createQueryBuilder("movie")
+            .leftJoinAndSelect("movie.director", "director")
+            .leftJoinAndSelect("movie.movieActors", "movieActor")
+            .leftJoinAndSelect("movieActor.actor", "actor")
+            .leftJoinAndSelect("movie.movieGenres", "movieGenre")
+            .leftJoinAndSelect("movieGenre.genre", "genre");
+    
+        if (search) {
+            queryBuilder.andWhere(
+                "movie.title LIKE :search OR movie.description LIKE :search OR movie.shortUrl LIKE :search",
+                { search: `%${search}%` }
+            );
+        }
+    
+        if (actorId) {
+            queryBuilder.andWhere("movieActor.actorId = :actorId", { actorId });
+        }
+    
+        if (genreId) {
+            queryBuilder.andWhere("movieGenre.genreId = :genreId", { genreId });
+        }
+    
+        if (directorId) {
+            queryBuilder.andWhere("movie.directorId = :directorId", { directorId });
+        }
+    
+        return await queryBuilder.getMany();
     }
-
+    
     static async getMovieById(id: number) {
         const data = await repo.findOne({
             where: {
