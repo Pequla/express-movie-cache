@@ -10,9 +10,18 @@ MovieRoute.get('/', async (req, res) => {
         const actor = Number(req.query.actor)
         const genre = Number(req.query.genre)
         const director = Number(req.query.director)
-        res.json(await MovieService.getMovies(search, actor, genre, director))
+        const runtime = Number(req.query.runtime)
+        res.json(await MovieService.getMovies(search, actor, genre, director, runtime))
     } catch (e) {
         console.log(e)
+        sendErrorResponse(res)
+    }
+})
+
+MovieRoute.get('/runtime', async (req, res) => {
+    try {
+        res.json(await MovieService.getUniqueRunTimes())
+    } catch (e) {
         sendErrorResponse(res)
     }
 })

@@ -17,36 +17,40 @@ const actorRepo = AppDataSource.getRepository(MovieActor)
 const genreRepo = AppDataSource.getRepository(MovieGenre)
 
 export class MovieService {
-    static async getMovies(search: string, actorId?: number, genreId?: number, directorId?: number) {
+    static async getMovies(search: string, actorId?: number, genreId?: number, directorId?: number, runTime?: number) {
         let queryBuilder: SelectQueryBuilder<Movie> = repo.createQueryBuilder("movie")
             .leftJoinAndSelect("movie.director", "director")
             .leftJoinAndSelect("movie.movieActors", "movieActor")
             .leftJoinAndSelect("movieActor.actor", "actor")
             .leftJoinAndSelect("movie.movieGenres", "movieGenre")
             .leftJoinAndSelect("movieGenre.genre", "genre");
-    
+
         if (search) {
             queryBuilder.andWhere(
                 "movie.title LIKE :search OR movie.description LIKE :search OR movie.shortUrl LIKE :search",
                 { search: `%${search}%` }
             );
         }
-    
+
         if (actorId) {
             queryBuilder.andWhere("movieActor.actorId = :actorId", { actorId });
         }
-    
+
         if (genreId) {
             queryBuilder.andWhere("movieGenre.genreId = :genreId", { genreId });
         }
-    
+
         if (directorId) {
             queryBuilder.andWhere("movie.directorId = :directorId", { directorId });
         }
-    
+
+        if (runTime) {
+            queryBuilder.andWhere("movie.runTime = :runTime", { runTime });
+        }
+
         return await queryBuilder.getMany();
     }
-    
+
     static async getMovieById(id: number) {
         const data = await repo.findOne({
             where: {
@@ -171,5 +175,14 @@ export class MovieService {
 
             }
         }
+    }
+
+    static async getUniqueRunTimes(): Promise<number[]> {
+        const runTimes = await repo.createQueryBuilder("movie")
+            .select("DISTINCT movie.runTime", "runTime")
+            .orderBy("movie.runTime", "ASC")
+            .getRawMany();
+
+        return runTimes.map(rt => rt.runTime);
     }
 }

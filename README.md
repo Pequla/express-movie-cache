@@ -8,8 +8,9 @@ REST API za prikaz i pretragu filmova na Srpskom jeziku napravljen za potrebe pr
 
 ### Putanje:
 
-- GET `/movie` - Doprema listu filmova, dostupni parameteri: `/movie?search=&actor=&genre=&director=` gde su actor, ganre i director ID istoimenih objekata
+- GET `/movie` - Doprema listu filmova, dostupni parameteri: `/movie?search=&actor=&genre=&director=&runtime=` gde su actor, ganre i director ID istoimenih objekata, a runtime je vrednost duzine trajanja filma
 - GET `/movie/short/<short_url>` - Doprema film za short url, odnosno permalink (moze se koristit umesto movieId jer je unikatan)
+- GET `/movie/runtime` - Doprema listu mogucih duzina trajanja filmova (Tip: number[])
 - GET `/movie/<movieId>` - Doprema film prema ID-ju
 - GET `/genre` - Doprema listu zanrova, dostupan parametar za preragu po imenu `/genre?search=`
 - GET `/genre/<genreId>` - Doprema zanr objekat po ID-ju
