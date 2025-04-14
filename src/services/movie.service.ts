@@ -23,7 +23,8 @@ export class MovieService {
             .leftJoinAndSelect("movie.movieActors", "movieActor")
             .leftJoinAndSelect("movieActor.actor", "actor")
             .leftJoinAndSelect("movie.movieGenres", "movieGenre")
-            .leftJoinAndSelect("movieGenre.genre", "genre");
+            .leftJoinAndSelect("movieGenre.genre", "genre")
+            .where("movie.active = true")
 
         if (search) {
             queryBuilder.andWhere(
@@ -54,7 +55,8 @@ export class MovieService {
     static async getMovieById(id: number) {
         const data = await repo.findOne({
             where: {
-                movieId: id
+                movieId: id,
+                active: true
             },
             relations: {
                 director: true,
@@ -77,7 +79,8 @@ export class MovieService {
     static async getMovieByShortUrl(short: string) {
         const data = await repo.findOne({
             where: {
-                shortUrl: short
+                shortUrl: short,
+                active: true
             },
             relations: {
                 director: true,
@@ -153,6 +156,7 @@ export class MovieService {
                     startDate: movie.startDate,
                     shortUrl: movie.shortURL,
                     runTime: movie.runTime,
+                    active: true,
                     createdAt: new Date()
                 })
 

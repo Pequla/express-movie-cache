@@ -51,6 +51,9 @@ export class Movie {
   @Column("int", { name: "run_time" })
   runTime: number;
 
+  @Column("bool", { name: "active", default: () => "'true'" })
+  active: boolean;
+
   @Column("datetime", {
     name: "created_at",
     default: () => "CURRENT_TIMESTAMP",
