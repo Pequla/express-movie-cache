@@ -1,7 +1,6 @@
 import axios from "axios";
 import { AppDataSource } from "../db";
 import { Movie } from "../entities/Movie";
-import { filter } from "../utils";
 import type { MovieModel } from "../models/movie.model";
 import { DirectorService } from "./director.service";
 import { Actor } from "../entities/Actor";
