@@ -26,6 +26,14 @@ MovieRoute.get('/runtime', async (req, res) => {
     }
 })
 
+MovieRoute.post('/list', async (req, res) => {
+    try {
+        res.json(await MovieService.getMoviesByIds(req.body))
+    } catch (e) {
+        sendErrorResponse(res)
+    }
+})
+
 MovieRoute.get('/short/:short', async (req, res) => {
     try {
         res.json(await MovieService.getMovieByShortUrl(req.params.short))

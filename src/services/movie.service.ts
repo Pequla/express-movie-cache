@@ -10,7 +10,7 @@ import type { Genre } from "../entities/Genre";
 import { GenreService } from "./genre.service";
 import { MovieActor } from "../entities/MovieActor";
 import { MovieGenre } from "../entities/MovieGenre";
-import type { SelectQueryBuilder } from "typeorm";
+import { In, type SelectQueryBuilder } from "typeorm";
 
 const repo = AppDataSource.getRepository(Movie)
 const actorRepo = AppDataSource.getRepository(MovieActor)
@@ -74,6 +74,24 @@ export class MovieService {
         }
 
         return data
+    }
+
+    static async getMoviesByIds(ids: number[]) {
+        return await repo.find({
+            where: {
+                movieId: In(ids),
+                active: true
+            },
+            relations: {
+                director: true,
+                movieActors: {
+                    actor: true
+                },
+                movieGenres: {
+                    genre: true
+                }
+            }
+        })
     }
 
     static async getMovieByShortUrl(short: string) {

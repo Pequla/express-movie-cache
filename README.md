@@ -18,5 +18,6 @@ REST API za prikaz i pretragu filmova na Srpskom jeziku napravljen za potrebe pr
 - GET `/actor/<actorId>` - Doprema actor objekat po ID-ju
 - GET `/director` - Doprema listu svih rezisera, dostupan parametar za pretragu po imenu rezisera `/director?search=`
 - GET `/director/<actorId>` - Doprema reziser objekat po ID-ju
+- POST `/movie/list` - Prihvata listu ID-jeva za koju ce vratiti listu istih filmova
 
 > Ukoliko primetite potrebu za jos putanja molim Vas da mi se javite na MS Teams
