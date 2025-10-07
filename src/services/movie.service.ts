@@ -24,7 +24,6 @@ export class MovieService {
             .leftJoinAndSelect("movie.movieGenres", "movieGenre")
             .leftJoinAndSelect("movieGenre.genre", "genre")
             .where("movie.active = true")
-            .orderBy("movie.movieId", "desc")
 
         if (search) {
             queryBuilder.andWhere(
